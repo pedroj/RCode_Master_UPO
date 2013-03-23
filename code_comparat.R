@@ -5,7 +5,7 @@
 # CODIGO R usado en el curso. ANALISIS COMPARATIVO
 ####################################################################
 # Librerias que nos van a hacer falta.
-library(ape); library(ade4)
+require(ape); require(ade4)
 #-------------------------------------------------------------------
 # Plot of different levels of inertia
 x1 <- c(1,3,5,7,9,12,14,18,19)
@@ -149,7 +149,7 @@ rohlf
 Moran.I(body,cophenetic(tree.primates))
 
 # Estimate with ade4
-library(ade4)
+require(ade4)
 gearymoran(cophenetic(tree.primates),data.frame(body,longevity))
 
 # Autocorrelogram
