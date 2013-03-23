@@ -1,0 +1,1494 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title></title>
+
+<base target="_blank"/>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: rgb(88, 72, 246)
+   }
+
+   pre .number {
+     color: rgb(0, 0, 205);
+   }
+
+   pre .comment {
+     color: rgb(76, 136, 107);
+   }
+
+   pre .keyword {
+     color: rgb(0, 0, 255);
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: rgb(3, 106, 7);
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+
+</head>
+
+<body>
+<p>This report was automatically generated with the R package <strong>knitr</strong><br/>
+(version <code>0.8</code>).</p>
+
+<pre><code class="r">#################################################################### Curso
+#################################################################### R.
+#################################################################### UPO-EBD,
+#################################################################### Nov
+#################################################################### 2012
+#################################################################### Pedro
+#################################################################### Jordano.
+#################################################################### -------------------------------------------------------------------
+#################################################################### CODIGO
+#################################################################### R
+#################################################################### usado
+#################################################################### en el
+#################################################################### curso.
+#################################################################### ANALISIS
+#################################################################### ESPACIAL
+#################################################################### 
+#################################################################### Librerias
+#################################################################### que
+#################################################################### vamos
+#################################################################### a
+#################################################################### necesitar.
+library(ecespa)
+</code></pre>
+
+<pre><code>## Loading required package: splancs
+</code></pre>
+
+<pre><code>## Loading required package: sp
+</code></pre>
+
+<pre><code>## Spatial Point Pattern Analysis Code in S-Plus
+## 
+## Version 2 - Spatial and Space-Time analysis
+</code></pre>
+
+<pre><code>## Loading required package: spatstat
+</code></pre>
+
+<pre><code>## Loading required package: mgcv
+</code></pre>
+
+<pre><code>## This is mgcv 1.7-22. For overview type &#39;help(&quot;mgcv-package&quot;)&#39;.
+</code></pre>
+
+<pre><code>## Loading required package: deldir
+</code></pre>
+
+<pre><code>## deldir 0.0-21
+</code></pre>
+
+<pre><code>## spatstat 1.29-0 Type &#39;help(spatstat)&#39; for an overview of spatstat
+## &#39;latest.news()&#39; for news on latest version &#39;licence.polygons()&#39; for
+## licence information on polygon calculations
+</code></pre>
+
+<pre><code>## Attaching package: &#39;spatstat&#39;
+</code></pre>
+
+<pre><code>## The following object(s) are masked from &#39;package:igraph&#39;:
+## 
+## diameter, vertices
+</code></pre>
+
+<pre><code>## The following object(s) are masked from &#39;package:ade4&#39;:
+## 
+## disc
+</code></pre>
+
+<pre><code>## Loading required package: fields
+</code></pre>
+
+<pre><code>## Loading required package: spam
+</code></pre>
+
+<pre><code>## Spam version 0.29-2 (2012-08-17) is loaded. Type &#39;help( Spam)&#39; or &#39;demo(
+## spam)&#39; for a short introduction and overview of this package. Help for
+## individual functions is also obtained by adding the suffix &#39;.spam&#39; to the
+## function name, e.g. &#39;help( chol.spam)&#39;.
+</code></pre>
+
+<pre><code>## Attaching package: &#39;spam&#39;
+</code></pre>
+
+<pre><code>## The following object(s) are masked from &#39;package:base&#39;:
+## 
+## backsolve, forwardsolve
+</code></pre>
+
+<pre><code>## Loading required package: akima
+</code></pre>
+
+<pre><code class="r">library(spatial)
+</code></pre>
+
+<pre><code>## Attaching package: &#39;spatial&#39;
+</code></pre>
+
+<pre><code>## The following object(s) are masked from &#39;package:spatstat&#39;:
+## 
+## Strauss
+</code></pre>
+
+<pre><code class="r">library(spatstat)
+library(gstat)
+</code></pre>
+
+<pre><code>## Loading required package: spacetime
+</code></pre>
+
+<pre><code>## Loading required package: zoo
+</code></pre>
+
+<pre><code>## Attaching package: &#39;zoo&#39;
+</code></pre>
+
+<pre><code>## The following object(s) are masked from &#39;package:timeSeries&#39;:
+## 
+## time&lt;-
+</code></pre>
+
+<pre><code>## The following object(s) are masked from &#39;package:base&#39;:
+## 
+## as.Date, as.Date.numeric
+</code></pre>
+
+<pre><code>## Loading required package: xts
+</code></pre>
+
+<pre><code>## Attaching package: &#39;gstat&#39;
+</code></pre>
+
+<pre><code>## The following object(s) are masked from &#39;package:spatial&#39;:
+## 
+## variogram
+</code></pre>
+
+<pre><code>## The following object(s) are masked from &#39;package:spatstat&#39;:
+## 
+## idw
+</code></pre>
+
+<pre><code class="r">library(sgeostat)
+</code></pre>
+
+<pre><code>## Attaching package: &#39;sgeostat&#39;
+</code></pre>
+
+<pre><code>## The following object(s) are masked from &#39;package:gstat&#39;:
+## 
+## fit.variogram, krige
+</code></pre>
+
+<pre><code class="r">library(MASS)
+
+# -------------------------------------------------------------------
+# Analisis basico Representacion de tres patrones de puntos basicos.
+data(fig1, fig2, fig3)
+par(mfrow = c(1, 3))
+plot(fig1, pch = 19)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig1&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(fig2, pch = 19)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig2&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(fig3, pch = 19)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig3&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(fig1, pch = 19, main = &quot;Random&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig1&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(fig2, pch = 19, main = &quot;Clumped&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig2&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(fig3, pch = 19, main = &quot;Regular&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig3&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(1, 1))
+
+# --------------------------------------------------------------- Objetos
+# de puntos
+data(swedishpines)
+X &lt;- swedishpines
+</code></pre>
+
+<pre><code>## Error: objeto &#39;swedishpines&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(1, 3))
+plot(X)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;X&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">X
+</code></pre>
+
+<pre><code>## Error: objeto &#39;X&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">summary(X)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
+## function &#39;summary&#39;: Error: objeto &#39;X&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(density(X, 10), axes = TRUE)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error en density(X, 10) : objeto &#39;X&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">contour(density(X, 10), axes = FALSE)
+</code></pre>
+
+<pre><code>## Error: objeto &#39;X&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# -------------------------------------------------------------------
+# Patrones de puntos multi-tipos
+data(lansing)
+lansing
+</code></pre>
+
+<pre><code>## Error: objeto &#39;lansing&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">head(lansing)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;head&#39;: Error: objeto &#39;lansing&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">summary(lansing)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
+## function &#39;summary&#39;: Error: objeto &#39;lansing&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(lansing)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;lansing&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(split(lansing))
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error en split(lansing) : objeto &#39;lansing&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">hick &lt;- split(lansing)$hickory
+</code></pre>
+
+<pre><code>## Error: objeto &#39;lansing&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(hick)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;hick&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# -------------------------------------------------------------------
+# Puntos marcados. Crear ppp con puntos marcados.
+fig4 &lt;- fig1[1:40, ]  # Tomo 40 coordenadas de Fig 1
+</code></pre>
+
+<pre><code>## Error: objeto &#39;fig1&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">m &lt;- round(rnorm(40, mean = 100, sd = 60), 1)  # Hago 40 marcas al azar
+fig4 &lt;- cbind(fig4, m)  # Lo junto
+</code></pre>
+
+<pre><code>## Error: objeto &#39;fig4&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">fig4.ppp &lt;- ppp(fig4$x, fig4$y, c(0, 100), c(0, 100), marks = fig4$m)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;ppp&quot;
+</code></pre>
+
+<pre><code class="r">plot(fig4.ppp)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig4.ppp&#39; no encontrado
+</code></pre>
+
+<pre><code class="r"># Plot con transparencia
+plot(fig4.ppp, bg = rgb(0, 0, 1, 0.2), pch = 16, lty = 0, frame.plot = T)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig4.ppp&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# ---------- EJEMPLO Distancia entre dos puntos
+plot(fig1, pch = 19)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig1&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">dist &lt;- function(x1, y1, x2, y2) sqrt((x2 - x1)^2 + (y2 - y1)^2)
+
+# Function to estimate nearest neighbor for n points and draw lines after
+# plotting. Substitue 100 by no. of points Usamos fig1, que tiene 87
+# puntos.
+r &lt;- numeric(87)
+nn &lt;- numeric(87)
+d &lt;- numeric(87)
+for (i in 1:87) {
+    d &lt;- 0
+    for (k in 1:87) d[k] &lt;- dist(fig1$x[i], fig1$y[i], fig1$x[k], fig1$y[k])
+    r[i] &lt;- min(d[-i])
+    nn[i] &lt;- which(d == min(d[-i]))
+}
+</code></pre>
+
+<pre><code>## Error: objeto &#39;fig1&#39; no encontrado
+</code></pre>
+
+<pre><code class="r"># Dibujamos las lineas
+for (i in 1:87) lines(c(fig1$x[i], fig1$x[nn[i]]), c(fig1$y[i], fig1$y[nn[i]]))  # draw the lines
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;lines&#39;: Error: objeto &#39;fig1&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# -------------------------------------------------------------------
+# Patrones interactivos
+X &lt;- clickppp(10)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;clickppp&quot;
+</code></pre>
+
+<pre><code class="r">plot(X)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;X&#39; no encontrado
+</code></pre>
+
+<pre><code class="r"># -------------------------------------------------------------------
+# Patrones ppp
+x &lt;- c(1.94, 0.32, 1.74, 0.64, 0.12, 1.44, 0.29, 0.74, 0.32, 1.35, 1.23, 0.53, 
+    0.98, 0.96, 0.91, 1.28, 1.24, 0.14, 1.75, 0.24, 0.45, 0.94, 1.22, 1.6, 0.62)
+y &lt;- c(0.4, 0.7, 0.91, 0.92, 0.13, 0.92, 0.72, 0.15, 0.78, 0.59, 0.02, 0.7, 
+    0.75, 0.33, 0.52, 0.75, 0.19, 0.32, 0.87, 0.13, 0.63, 0.08, 0.72, 0.67, 
+    0.96)
+m &lt;- c(9.2, 3.2, 14.4, 12.3, 2.5, 6.1, 2.7, 10.4, 10.2, 0.4, 20.9, 10.4, 25.7, 
+    7.7, 13.7, 10.4, 8.1, 9.7, 0.3, 0.2, 1.9, 11.5, 6.1, 16.8, 36.2)
+
+Q &lt;- ppp(x, y, c(0, 2), c(0, 1), marks = m)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;ppp&quot;
+</code></pre>
+
+<pre><code class="r">Q
+</code></pre>
+
+<pre><code>## Error: objeto &#39;Q&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(Q)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;Q&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+m &lt;- sample(c(&quot;Yes&quot;, &quot;No&quot;), 25, replace = TRUE)
+m &lt;- factor(m)
+YN &lt;- ppp(x, y, c(0, 2), c(0, 1), marks = m)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;ppp&quot;
+</code></pre>
+
+<pre><code class="r">YN
+</code></pre>
+
+<pre><code>## Error: objeto &#39;YN&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(YN)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;YN&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# -------------------------------------------------------------------
+# Objetos ppp
+help(ppp)
+fig1.ppp = haz.ppp(fig1)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;haz.ppp&quot;
+</code></pre>
+
+<pre><code class="r">cosa1 = Kest(fig1.ppp)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;Kest&quot;
+</code></pre>
+
+<pre><code class="r">fig2.ppp = haz.ppp(fig2)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;haz.ppp&quot;
+</code></pre>
+
+<pre><code class="r">cosa2 = Kest(fig2.ppp)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;Kest&quot;
+</code></pre>
+
+<pre><code class="r">fig3.ppp = haz.ppp(fig3)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;haz.ppp&quot;
+</code></pre>
+
+<pre><code class="r">cosa3 = Kest(fig3.ppp)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;Kest&quot;
+</code></pre>
+
+<pre><code class="r">
+# Creamos un objeto llamado &#39;cosa1&#39; en el que se almacena el resultado de
+# estimar la funcion K del patron de fig1 con Kest. Para conocer los
+# detalles del resultado, opciones de analisis, etc, posdemos teclear
+# help(Kest). Para representarla graficamente, tecleamos:
+plot(cosa1)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cosa1&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(cosa1, col = c(1, 0, 0, 1), lwd = c(2, 2, 2, 2), lty = c(1, 1, 1, 2), main = &quot;&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cosa1&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# Los argumentos col, lwd y lty hacen referencia al color, anchura y tipo
+# de las lineas; main indica que escribir como rotulo del grafico ). Lo
+# anterior nos representa la estimacion de la funcion K con la correccion
+# isotropica de Ripley (en trazo continuo, lty=1) y la funcion K teorica
+# de un proceso CSR (en trazo discontinuo, lty=2).
+
+# La funcion L(r) [= (K(r) /π )1/2)-r], se puede representar con:
+
+plot(cosa1, sqrt(./pi) - r ~ r, col = c(2, 1, 1, 3), lwd = c(2, 0.2, 0.2, 2), 
+    lty = c(1, 1, 1, 2), main = &quot;&quot;, ylab = &quot;L(r)&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cosa1&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(1, 3))
+plot(fig2)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig2&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(cosa2, col = c(1, 0, 0, 1), lwd = c(2, 2, 2, 2), lty = c(1, 1, 1, 2), main = &quot;&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cosa2&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(cosa2, sqrt(./pi) - r ~ r, col = c(2, 1, 1, 3), lwd = c(2, 0.2, 0.2, 2), 
+    lty = c(1, 1, 1, 2), main = &quot;&quot;, ylab = &quot;L(r)&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cosa2&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(1, 3))
+plot(fig3)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;fig3&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(cosa3, col = c(1, 0, 0, 1), lwd = c(2, 2, 2, 2), lty = c(1, 1, 1, 2), main = &quot;&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cosa3&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(cosa3, sqrt(./pi) - r ~ r, col = c(2, 1, 1, 3), lwd = c(2, 0.2, 0.2, 2), 
+    lty = c(1, 1, 1, 2), main = &quot;&quot;, ylab = &quot;L(r)&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cosa3&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# En la aproximación de Ripley para Lm, en áreas rectangulares, los
+# valores críticos aproximados del 1 % son ± 1.68 √A / N, siendo A la
+# superficie del área de estudio y N el número de puntos. Podemos comparar
+# las envueltas pointwise y las envueltas simultáneas del patrón fig3 con
+# las siguentes instrucciones:
+
+cosa1.env = envelope(fig1.ppp, Kest)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;envelope&quot;
+</code></pre>
+
+<pre><code class="r">cosa2.env = envelope(fig2.ppp, Kest)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;envelope&quot;
+</code></pre>
+
+<pre><code class="r">cosa3.env = envelope(fig3.ppp, Kest)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;envelope&quot;
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(1, 3))
+plot(cosa1.env, sqrt(./pi) - r ~ r, lwd = c(2, 1, 1, 1), lty = c(1, 1, 3, 3), 
+    col = c(1, 1, 2, 2), xlab = &quot;r&quot;, ylab = &quot;L(r)&quot;, main = &quot;&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cosa1.env&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(cosa2.env, sqrt(./pi) - r ~ r, lwd = c(2, 1, 1, 1), lty = c(1, 1, 3, 3), 
+    col = c(1, 1, 2, 2), xlab = &quot;r&quot;, ylab = &quot;L(r)&quot;, main = &quot;&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cosa2.env&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(cosa3.env, sqrt(./pi) - r ~ r, lwd = c(2, 1, 1, 1), lty = c(1, 1, 3, 3), 
+    col = c(1, 1, 2, 2), xlab = &quot;r&quot;, ylab = &quot;L(r)&quot;, main = &quot;&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cosa3.env&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# -------------------------------------------------------------------
+# Funcion K de Ripley
+data(cells)
+K &lt;- Kest(cells)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;Kest&quot;
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(1, 3))
+plot(cells)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;cells&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(Kest(cells))
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: no se pudo encontrar la función &quot;Kest&quot;
+</code></pre>
+
+<pre><code class="r">L &lt;- Lest(cells)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;Lest&quot;
+</code></pre>
+
+<pre><code class="r">plot(L, main = &quot;Lfunction&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;L&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# Pair correlation
+plot(pcf(cells))
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: no se pudo encontrar la función &quot;pcf&quot;
+</code></pre>
+
+<pre><code class="r">
+# Simulaciones de Monte Carlo para estima de CI
+data(cells)
+E &lt;- envelope(cells, Kest, nsim = 39, rank = 1)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;envelope&quot;
+</code></pre>
+
+<pre><code class="r">E
+</code></pre>
+
+<pre><code>## function (graph, P = NULL, path = NULL, directed = TRUE) 
+## {
+##     if (!is.igraph(graph)) {
+##         stop(&quot;Not a graph object&quot;)
+##     }
+##     if (!is.null(P) &amp;&amp; !is.null(path)) {
+##         stop(&quot;Cannot give both `P&#39; and `path&#39; at the same time&quot;)
+##     }
+##     if (is.null(P) &amp;&amp; is.null(path)) {
+##         ec &lt;- ecount(graph)
+##         res &lt;- seq_len(ec)
+##     }
+##     else if (!is.null(P)) {
+##         on.exit(.Call(&quot;R_igraph_finalizer&quot;, PACKAGE = &quot;igraph&quot;))
+##         res &lt;- .Call(&quot;R_igraph_es_pairs&quot;, graph, as.igraph.vs(graph, 
+##             P) - 1, as.logical(directed), PACKAGE = &quot;igraph&quot;) + 
+##             1
+##     }
+##     else {
+##         on.exit(.Call(&quot;R_igraph_finalizer&quot;, PACKAGE = &quot;igraph&quot;))
+##         res &lt;- .Call(&quot;R_igraph_es_path&quot;, graph, as.igraph.vs(graph, 
+##             path) - 1, as.logical(directed), PACKAGE = &quot;igraph&quot;) + 
+##             1
+##     }
+##     class(res) &lt;- &quot;igraph.es&quot;
+##     ne &lt;- new.env()
+##     assign(&quot;graph&quot;, graph, envir = ne)
+##     attr(res, &quot;env&quot;) &lt;- ne
+##     res
+## }
+## &lt;environment: namespace:igraph&gt;
+</code></pre>
+
+<pre><code class="r">plot(E, main = &quot;pointwise envelopes&quot;)
+</code></pre>
+
+<pre><code>## Error: Not a graph object
+</code></pre>
+
+<pre><code class="r">
+# ------------------------------- Puntos inhomogeneos para los arces
+# (maple)
+data(lansing)
+X &lt;- unmark(split(lansing)$maple)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;unmark&quot;
+</code></pre>
+
+<pre><code class="r">plot(X, main = &quot;Acer&quot;, cex = 0.5, pch = &quot;+&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;X&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# (1) Funcion de intensidad estimada ajustando un modelo Ajuste de la
+# tendencia espacial: polynomial para las coordenadas x and y
+fit &lt;- ppm(X, ~polynom(x, y, 2), Poisson())
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;ppm&quot;
+</code></pre>
+
+<pre><code class="r">
+# (a) valores de intensidad esperados en los puntos, para obtener un valor
+# de lambda (vector de valores)
+lambda &lt;- predict(fit, locations = X, type = &quot;trend&quot;)
+</code></pre>
+
+<pre><code>## Error: objeto &#39;fit&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# Inhomogeneous K function
+Ki &lt;- Kinhom(X, lambda)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;Kinhom&quot;
+</code></pre>
+
+<pre><code class="r">plot(Ki)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;Ki&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# Como hacer &#39;envueltas&#39; de simulacion: Example shows method (2)
+smo &lt;- density.ppp(X, sigma = 0.1)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;density.ppp&quot;
+</code></pre>
+
+<pre><code class="r">Ken &lt;- envelope(X, Kinhom, nsim = 99, simulate = expression(rpoispp(smo)), sigma = 0.1, 
+    correction = &quot;trans&quot;)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;envelope&quot;
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(1, 2))
+plot(smo, main = &quot;Densidad de arboles&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;smo&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(Ken, main = &quot;Ken&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;Ken&#39; no encontrado
+</code></pre>
+
+<pre><code class="r"># -------------------------------------------------------------------
+# Quadrat counts
+Q &lt;- quadratcount(X, nx = 4, ny = 3)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;quadratcount&quot;
+</code></pre>
+
+<pre><code class="r">plot(X)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;X&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(Q, add = TRUE, cex = 2)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;Q&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">K &lt;- Kest(X)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;Kest&quot;
+</code></pre>
+
+<pre><code class="r">plot(K)  # mas tarde explicamos mas sobre la K de Ripley
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;K&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# -------------------------------------------------------------------
+# Tests
+data(bei)
+summary(bei)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
+## function &#39;summary&#39;: Error: objeto &#39;bei&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+par(mfrow = c(1, 2))
+quadratcount(bei, nx = 6, ny = 3)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;quadratcount&quot;
+</code></pre>
+
+<pre><code class="r">Q &lt;- quadratcount(bei, nx = 6, ny = 3)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;quadratcount&quot;
+</code></pre>
+
+<pre><code class="r">plot(bei, cex = 0.5, pch = &quot;+&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;bei&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(Q, add = TRUE, cex = 2)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;Q&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+M &lt;- quadrat.test(bei, nx = 6, ny = 3)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;quadrat.test&quot;
+</code></pre>
+
+<pre><code class="r">M
+</code></pre>
+
+<pre><code>## Error: objeto &#39;M&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(Q)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;Q&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(M, add = TRUE, cex = 1)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;M&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# -------------------------------------------------------------------
+# Otros plots de densidad y tendencia
+
+den &lt;- density(bei, sigma = 70)
+</code></pre>
+
+<pre><code>## Error: objeto &#39;bei&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(den)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;den&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(bei, add = TRUE, cex = 0.5)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;bei&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+persp(den)
+</code></pre>
+
+<pre><code>## Error: objeto &#39;den&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">contour(den)
+</code></pre>
+
+<pre><code>## Error: objeto &#39;den&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+plot(rpoispp(100))
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: no se pudo encontrar la función &quot;rpoispp&quot;
+</code></pre>
+
+<pre><code class="r">
+# -------------------------------------------------------------------
+# Analisis de cuadriculas
+data(nztrees)
+nztrees
+</code></pre>
+
+<pre><code>## Error: objeto &#39;nztrees&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(nztrees)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;nztrees&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">contour(density(nztrees, 10), axes = FALSE)
+</code></pre>
+
+<pre><code>## Error: objeto &#39;nztrees&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# &#39;Recortamos&#39; el mapa a fin de excluir una parte de la muestra
+chopped &lt;- owin(c(0, 148), c(0, 95))
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;owin&quot;
+</code></pre>
+
+<pre><code class="r"># O bien podemos decir:
+win &lt;- nztrees$window
+</code></pre>
+
+<pre><code>## Error: objeto &#39;nztrees&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">chopped &lt;- trim.rectangle(win, xmargin = c(0, 5), ymargin = 0)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;trim.rectangle&quot;
+</code></pre>
+
+<pre><code class="r">chopped
+</code></pre>
+
+<pre><code>## Error: objeto &#39;chopped&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">nzchop &lt;- nztrees[chopped]
+</code></pre>
+
+<pre><code>## Error: objeto &#39;nztrees&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">summary(nzchop)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
+## function &#39;summary&#39;: Error: objeto &#39;nzchop&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(density(nzchop, 10))
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error en density(nzchop, 10) : objeto &#39;nzchop&#39; no
+## encontrado
+</code></pre>
+
+<pre><code class="r">plot(nzchop, add = TRUE)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;nzchop&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# Cuadriculas
+M &lt;- quadrat.test(nzchop, nx = 3, ny = 2)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;quadrat.test&quot;
+</code></pre>
+
+<pre><code class="r">M
+</code></pre>
+
+<pre><code>## Error: objeto &#39;M&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(nzchop)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;nzchop&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(M, add = TRUE, cex = 2)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;M&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# KS Test
+KS &lt;- kstest(nzchop, function(x, y) {
+    x
+})
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;kstest&quot;
+</code></pre>
+
+<pre><code class="r">plot(KS)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;KS&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">pval &lt;- KS$p.value
+</code></pre>
+
+<pre><code>## Error: objeto &#39;KS&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# ------------------------------------------------------------------- Test
+# de modelos de distribucion. Funcion ppm Ajusta un modelo Poisson
+# estacionario marcado con diferente intensidad para cada especie.
+plot(lansing)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;lansing&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">ppm(lansing, ~marks, Poisson())
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;ppm&quot;
+</code></pre>
+
+<pre><code class="r"># Se interpreta de forma analoga a un glm.
+
+# ------------------------------------------------------------------- Test
+# de modelos con covariantes
+data(bei)
+grad &lt;- bei.extra$grad
+</code></pre>
+
+<pre><code>## Error: objeto &#39;bei.extra&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(1, 2))
+quadratcount(bei, nx = 6, ny = 3)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;quadratcount&quot;
+</code></pre>
+
+<pre><code class="r">Q &lt;- quadratcount(bei, nx = 6, ny = 3)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;quadratcount&quot;
+</code></pre>
+
+<pre><code class="r">plot(bei, cex = 0.5, pch = &quot;+&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;bei&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(Q, add = TRUE, cex = 2)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;Q&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(grad)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;grad&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">fit &lt;- ppm(bei, ~slope, covariates = list(slope = grad))
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;ppm&quot;
+</code></pre>
+
+<pre><code class="r">fitnull &lt;- update(fit, ~1)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
+## function &#39;update&#39;: Error: objeto &#39;fit&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">anova(fitnull, fit, test = &quot;Chi&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
+## function &#39;anova&#39;: Error: objeto &#39;fitnull&#39; no encontrado
+</code></pre>
+
+<pre><code class="r"># -------------------------------------------------------------------
+# Variogramas, triangulaciones de Delaunay
+
+library(sgeostat)
+library(MASS)
+data(lansing)
+hick &lt;- split(lansing)$hickory
+</code></pre>
+
+<pre><code>## Error: objeto &#39;lansing&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(hick)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;hick&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# Conteos de arboles por parcelas
+par(mfrow = c(3, 1))
+Q &lt;- quadratcount(hick, nx = 20, ny = 20)  # Quadrats
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;quadratcount&quot;
+</code></pre>
+
+<pre><code class="r">plot(hick, cex = 0.5, pch = &quot;+&quot;)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;hick&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(Q, cex = 0.5)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;Q&#39; no encontrado
+</code></pre>
+
+<pre><code class="r"># Genero las coordenadas de las parcelas
+hick.cnt &lt;- as.data.frame(cbind(rep(1:20, each = 20), rep(1:20, 20), as.vector(Q)))
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;as.data.frame&#39;: Error en as.vector(Q) : error in evaluating the
+## argument &#39;x&#39; in selecting a method for function &#39;as.vector&#39;: Error: objeto
+## &#39;Q&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">colnames(hick.cnt) &lt;- c(&quot;x&quot;, &quot;y&quot;, &quot;z&quot;)
+</code></pre>
+
+<pre><code>## Error: objeto &#39;hick.cnt&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">str(hick.cnt)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;object&#39; in selecting a method for
+## function &#39;str&#39;: Error: objeto &#39;hick.cnt&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">
+# Con libreria MASS
+topo.kr &lt;- surf.ls(2, hick.cnt)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;surf.ls&quot;
+</code></pre>
+
+<pre><code class="r">correlogram(topo.kr, 30)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;correlogram&quot;
+</code></pre>
+
+<pre><code class="r">d &lt;- seq(0, 30, 0.1)
+lines(d, expcov(d, 0.7))
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;expcov&quot;
+</code></pre>
+
+<pre><code class="r">
+# -------------------------------- Delaunay triangulations
+library(deldir)
+hick.tr &lt;- deldir(hick$x, hick$y)
+</code></pre>
+
+<pre><code>## Error: no se pudo encontrar la función &quot;deldir&quot;
+</code></pre>
+
+<pre><code class="r">par(mfrow = c(1, 3))
+plot(hick)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;hick&#39; no encontrado
+</code></pre>
+
+<pre><code class="r">plot(delaunay(hick))
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: no se pudo encontrar la función &quot;delaunay&quot;
+</code></pre>
+
+<pre><code class="r">plot(hick.tr)
+</code></pre>
+
+<pre><code>## Error: error in evaluating the argument &#39;x&#39; in selecting a method for
+## function &#39;plot&#39;: Error: objeto &#39;hick.tr&#39; no encontrado
+</code></pre>
+
+<pre><code class="r"># -------------------------------------------------------------------
+
+</code></pre>
+
+<p>The R session information (including the OS info, R version and all<br/>
+packages used):</p>
+
+<pre><code class="r">sessionInfo()
+</code></pre>
+
+<pre><code>## R version 2.15.2 (2012-10-26)
+## Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+## 
+## locale:
+## [1] C/en_US.UTF-8/C/C/C/C
+## 
+## attached base packages:
+## [1] splines   stats     graphics  grDevices utils     methods   base     
+## 
+## other attached packages:
+##  [1] sgeostat_1.0-24    gstat_1.0-14       spacetime_0.8-0   
+##  [4] xts_0.8-6          zoo_1.7-8          spatial_7.3-5     
+##  [7] ecespa_1.1-5       akima_0.5-7        fields_6.7        
+## [10] spam_0.29-2        spatstat_1.29-0    deldir_0.0-21     
+## [13] mgcv_1.7-22        splancs_2.01-31    sp_1.0-2          
+## [16] nlme_3.1-105       lme4_0.999999-0    Matrix_1.0-10     
+## [19] lattice_0.20-10    fBasics_2160.85    timeSeries_2160.95
+## [22] timeDate_2160.97   bipartite_1.18     vegan_2.0-5       
+## [25] permute_0.7-0      tnet_3.0.9         survival_2.36-14  
+## [28] igraph_0.6-3       MASS_7.3-22        ade4_1.4-17       
+## 
+## loaded via a namespace (and not attached):
+##  [1] digest_0.5.2     evaluate_0.4.2   formatR_0.6      grid_2.15.2     
+##  [5] knitr_0.8        plyr_1.7.1       stabledist_0.6-5 stats4_2.15.2   
+##  [9] stringr_0.6.1    tools_2.15.2
+</code></pre>
+
+<pre><code class="r">Sys.time()
+</code></pre>
+
+<pre><code>## [1] &quot;2012-11-26 19:57:03 CET&quot;
+</code></pre>
+
+<!-- Automatically generated by RStudio [12861c30b10411e1afa60800200c9a66] -->
+
+</body>
+
+</html>
+
