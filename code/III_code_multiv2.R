@@ -1,23 +1,24 @@
 ####################################################################
-# Curso R. UPO-EBD, Nov 2012
+# Curso R. UPO-EBD, Nov 2013.
 # Pedro Jordano.
 #-------------------------------------------------------------------
-# CODIGO R usado en el curso. ANALISIS MULTIVARIANTE (2)
+# CODIGO R usado en el curso. ANALISIS MULTIVARIANTE (2).
 ####################################################################
 library(MASS)
-library(vegan)
-library(ade4)
+library(vegan) # Multivariante
+library(ade4)  # Multivariante
 library(datasets)
-library(klaR)
-library(CCA)
-library(yacca)
+library(klaR) # Para funcion discriminante cuadratica qda( )
+library(CCA)  # Correlaciones canonicas
+library(yacca)  # Correlaciones canonicas
 #-------------------------------------------------------------------
 # Analisis de correspondencias
-
 data(avimedi)
 
 # avimedi es una lista con informacion sobre 302 sitios: 
-frecuencias de 51 especies de aves; dos factores (habitats y Mediterranean origin). La lista contiene los objetos:
+# frecuencias de 51 especies de aves; 
+# dos factores (habitats y Mediterranean origin). 
+# La lista contiene los objetos:
 # fau: data frame de 302 sitios - 51 especies de aves.
 # plan: data frame de 302 sitios - 2 factores : reg con dos niveles Provence (Pr, S Francia) y Corcega (Co) ; str con seis niveles describiendo la vegetacion- desde un matorral bajo (1) hasta bosque maduro de encinas (6).
 # nomesp: vector con 51 nombres latinos.

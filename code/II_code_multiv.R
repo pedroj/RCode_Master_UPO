@@ -1,8 +1,8 @@
 ####################################################################
-# Curso R. UPO-EBD, Nov 2012
+# Curso R. UPO-EBD, Nov 2013.
 # Pedro Jordano.
 #-------------------------------------------------------------------
-# CODIGO R usado en el curso. ANALISIS MULTIVARIANTE
+# CODIGO R usado en el curso. ANALISIS MULTIVARIANTE.
 ####################################################################
 library(MASS)
 library(datasets)
@@ -11,7 +11,6 @@ library(mvoutlier)
 library(mvnormtest)
 library(psych)
 library(nFactors)
-
 #-------------------------------------------------------------------
 # Outliers multivariantes
 # La funcion aq.plot( ) en la libreria mvoutlier permite identificar outliers multivariantes por medio de distancias de Mahalanobis (plots de las "ordered squared robust Mahalanobis distances" de las observaciones a la funcion empirica.

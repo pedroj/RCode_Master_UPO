@@ -1,5 +1,5 @@
 ####################################################################
-# Curso R. UPO-EBD, Nov 2012
+# Curso R. UPO-EBD, Nov 2013
 # Pedro Jordano.
 #-------------------------------------------------------------------
 # CODIGO R usado en el curso. OTROS ANALISIS
@@ -33,7 +33,7 @@ J <- H/log(specnumber(BCI))
 # N0 = S
 # N1 = exp(H′)
 # N2 = D2 (inverso del indice de Simpson): 1/Sum pi^2
-# N∞ = 1/(maxpi). 
+# N∞ = 1/(maxpi). 
 # Las diversidades de Renyi correspondientes son:
 # H0 = log(S) 
 # H1 = H′

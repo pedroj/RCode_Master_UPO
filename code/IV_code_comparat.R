@@ -1,73 +1,27 @@
 ####################################################################
-# Curso R. UPO-EBD, Nov 2012
+# Curso R. UPO-EBD, Nov 2013
 # Pedro Jordano.
 #-------------------------------------------------------------------
-# CODIGO R usado en el curso. ANALISIS COMPARATIVO
+# CODIGO R usado en el curso. ANALISIS COMPARATIVO.
 ####################################################################
 # Librerias que nos van a hacer falta.
 require(ape); require(ade4)
 #-------------------------------------------------------------------
-# Plot of different levels of inertia
-x1 <- c(1,3,5,7,9,12,14,18,19)
-y1 <- c(2,4,2,5,11,9,17,20,21)
-x2 <- c(1,3,5,7,9,12,14,18,19)
-y2 <- c(2,2,1,4,5,7,7,9,9)
-
-plot(x1,y1,type="n",xlab="Tiempo",ylab="Rasgo fenotípico")
-points(x1,y1)
-abline(lm(y1~x1))
-scatterutil.ellipse(x1, y1, rep(c(1,0), c(10,10)), cell = 1.5,
-                    ax = F)
-points(x2,y2,pch=19)
-abline(lm(y2~x2), col="red")
-scatterutil.ellipse(x2, y2, rep(c(1,0),c(10,10)), cell= 1.5,  
-                    ax= F)
-#-------------------------------------------------------------------
-# Simular un modelo Ornstein-Uhlenbeck
-# Primero el Brownian
-x <- cumsum(c(0,rnorm(99)))
-# Replicamos el Brownian model
-x.br <- replicate(5, cumsum(c(0,rnorm(99))))  # Cinco replicas
-var(x.br[100,])         # Varianza del Browniano
-
-# Ornstein-Uhlenbeck
-x.ou <- numeric(100)
-for (i in 2:100)
-    x.ou[i] <- -0.2 * x.ou[i-1] + rnorm(1)
-
-# Creo una funcion para hacer la simulacion del OU
-sim.ou <- function () {
-	x <- numeric(100)
-	for (i in 2:100)
-	    x[i] <- -0.2 * x[i-1] + rnorm(1)
-	x   # retorna el valor de x
-}
-x.ou <- replicate(5, sim.ou())    # La simulacion de cinco OU's
-var(x.ou[100,])         # Varianza del O-U
-
-# Plots
-y1<-range(x.br)
-par(mfrow=c(2,1))
-matplot(x.br,ylim=y1,type="l",
-        col=1,main="Brownian",xlab="Tiempo",ylab="Estado del caracter")
-        abline(0,0,col="red",lwd=0.5)
-matplot(x.ou,ylim=y1,type="l",	
-        col=1,main="Ornstein-Uhlenbeck",
-        xlab="Tiempo",ylab="Estado del caracter")
-        abline(0,0,col="red",lwd=0.5)
-#-------------------------------------------------------------------
-# Sylvia data (Paradis 2006; Bohning-Gaese et al. 2003)
+# Example for obtaining sequence data from GenBank directly.
+# Sylvia data (Paradis 2006; Bohning-Gaese et al. 2003).
 x <- paste("AJ5345", 26:49, sep="")   # Accesion numbers
 x <- c("Z73494", x)
 sylvia.seq <- read.GenBank(x) # Read sequences from GenBank
 write.dna(sylvia.seq,"sylvia.fas",format="fasta")  # Write in fasta
-                                                   # format
+                                                   # format to file
 taxa.sylvia <- attr(sylvia.seq,"species")
 names(taxa.sylvia) <- names(sylvia.seq)
 sylvia.seq[c(1,24)]
 taxa.sylvia[1]<-"Sylvia_atricapilla"
 taxa.sylvia[24]<-"Sylvia_abyssinica"
 #-------------------------------------------------------------------
+# Phylogenetically-independent contrasts. 
+# Examples from Paradis (2010).
 # Contrasts
 tree.primates <- read.tree(text="((((Homo:0.21,Pongo:0.21):0.28,Macaca:0.49):0.13,Ateles: 0.62):0.38,Galago:1.00);")
 body <- c(4.09434,3.61092,2.37024,2.02815,-1.46968)
@@ -229,12 +183,62 @@ palm.phy <- newick2phylog(palm$tre)
 radial.phylog(palm.phy,clabel.l=1.25)
 tt<-cbind.data.frame(scalewt((palm$traits[,c(2,4:7)])))
 table.phylog(tt, palm.phy, clabel.r = 0.7, f = 0.4)
-
+####################################################################
 #-------------------------------------------------------------------
 # NOTES. Help.
 # Input data directly from the clipboard
 # From the Clipboard (MacOSX)
 data<-read.table(pipe("pbpaste"),header=TRUE,dec=",")
+
+#-------------------------------------------------------------------
+# Plot of different levels of inertia
+x1 <- c(1,3,5,7,9,12,14,18,19)
+y1 <- c(2,4,2,5,11,9,17,20,21)
+x2 <- c(1,3,5,7,9,12,14,18,19)
+y2 <- c(2,2,1,4,5,7,7,9,9)
+
+plot(x1,y1,type="n",xlab="Tiempo",ylab="Rasgo fenotípico")
+points(x1,y1)
+abline(lm(y1~x1))
+scatterutil.ellipse(x1, y1, rep(c(1,0), c(10,10)), cell = 1.5,
+    ax = F)
+points(x2,y2,pch=19)
+abline(lm(y2~x2), col="red")
+scatterutil.ellipse(x2, y2, rep(c(1,0),c(10,10)), cell= 1.5,  
+    ax= F)
+#-------------------------------------------------------------------
+# Simular un modelo Ornstein-Uhlenbeck
+# Primero el Brownian
+x <- cumsum(c(0,rnorm(99)))
+# Replicamos el Brownian model
+x.br <- replicate(5, cumsum(c(0,rnorm(99))))  # Cinco replicas
+var(x.br[100,])         # Varianza del Browniano
+
+# Ornstein-Uhlenbeck
+x.ou <- numeric(100)
+for (i in 2:100)
+    x.ou[i] <- -0.2 * x.ou[i-1] + rnorm(1)
+
+# Creo una funcion para hacer la simulacion del OU
+sim.ou <- function () {
+    x <- numeric(100)
+    for (i in 2:100)
+        x[i] <- -0.2 * x[i-1] + rnorm(1)
+    x   # retorna el valor de x
+}
+x.ou <- replicate(5, sim.ou())    # La simulacion de cinco OU's
+var(x.ou[100,])         # Varianza del O-U
+
+# Plots
+y1<-range(x.br)
+par(mfrow=c(2,1))
+matplot(x.br,ylim=y1,type="l",
+    col=1,main="Brownian",xlab="Tiempo",ylab="Estado del caracter")
+abline(0,0,col="red",lwd=0.5)
+matplot(x.ou,ylim=y1,type="l",	
+    col=1,main="Ornstein-Uhlenbeck",
+    xlab="Tiempo",ylab="Estado del caracter")
+abline(0,0,col="red",lwd=0.5)
 
 
 
