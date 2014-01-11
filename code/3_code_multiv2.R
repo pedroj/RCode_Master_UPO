@@ -81,7 +81,7 @@ iris<-read.table("iris.txt",header=TRUE,sep="\t",dec=".",na.strings="NA")
 library(MASS)
 
 # La sintaxis con MASS para el analisis discrimiante lineal es  lda(classvariable~., dataset). El punto '.' significa "todas las otras variables", pero podriamos indicarlas por su nombre tambien  lda(classvariable~var1+var2+ ...+varN, dataset). Escribimos los resultados a un archivo de salida que luego podemos ver:
-output=lda(species~., iris)
+output= lda(species~., iris)
 
 # Obtenemos primero los discriminant analysis scores, o sea, las nuevas coordenadas de los puntos tras la rotacion de la matriz. Esto es exactamente igual que un PCA. Luego hacemos un plot de las dos primeras funciones discriminantes (equivalente a PC1, PC2) and coloreamos los puntos por especie. La opcion asp=1 fuerza que los dos ejes esten en la misma escala y eso ayuda a que identifiquemos que funcion discriminante es la mas efectiva separando los grupos:
 scores<-predict(output, iris)$x

@@ -1,9 +1,9 @@
-####################################################################
+#######################################################################
 # Curso R. UPO-EBD, Nov 2013.
 # Pedro Jordano.
-#-------------------------------------------------------------------
+#----------------------------------------------------------------------
 # CODIGO R usado en el curso. ANALISIS MULTIVARIANTE.
-####################################################################
+#######################################################################
 library(MASS)
 library(datasets)
 library(HH)
@@ -11,19 +11,19 @@ library(mvoutlier)
 library(mvnormtest)
 library(psych)
 library(nFactors)
-#-------------------------------------------------------------------
+#----------------------------------------------------------------------
 # Outliers multivariantes
 # La funcion aq.plot( ) en la libreria mvoutlier permite identificar outliers multivariantes por medio de distancias de Mahalanobis (plots de las "ordered squared robust Mahalanobis distances" de las observaciones a la funcion empirica.
 
 # Detect Outliers in the iris Data
 library(mvoutlier)
-iris<-read.table("iris.txt",header=TRUE,sep="\t",dec=".",na.strings="NA")
+iris<-read.table("../data/iris.txt",header=TRUE,sep="\t",dec=".",na.strings="NA")
 # Vars: sep_len,sep_wid,pet_len,pet_wid,species
-outliers <- 
-aq.plot(c("sep_len","sep_wid","pet_len","pet_wid"))
+outliers <- aq.plot(c("sep_len","sep_wid","pet_len","pet_wid"))
+outliers <- aq.plot(iris[,1:4])
 outliers # show list of outliers
 
-#-------------------------------------------------------------------
+#----------------------------------------------------------------------
 # Normalidad multivariante, etc...
 # MANOVA y otros analisis multivariantes asumen normalidad multivariante. La funcion mshapiro.test( ) en la libreria mvnormtest da un test Shapiro-Wilk test para normalidad multivariante. La entrada al test debe ser una matriz numerica.
 
@@ -57,9 +57,8 @@ fligner.test(sep_len~species, data=iris)
 # Plot de homogeneidad de varianzas. El plot es de trellis, con tres paneles. El test resulta de un ANOVA sobre los datos del tercer panel (las desviaciones absolutas respecto a las medianas de cada grupo).
 library(HH)
 hov(sep_len~species, data=iris)
-plot.hov(sep_len~species, data=iris)
-
-#-------------------------------------------------------------------
+hovPlot(sep_len~species, data=iris)
+#----------------------------------------------------------------------
 # Analisis basico - PCA
 library(MASS)
 data(crabs)
@@ -132,7 +131,7 @@ splom(~lcrabs.pca$scores[,1:3],groups=crabs.grp,panel=panel.superpose,
 	"Orange female")),
 	points= Rows(trellis.par.get("superpose.symbol"),1:4),
 	columns=4))
-#-------------------------------------------------------------------
+#----------------------------------------------------------------------
 # PCA con rotacion de ejes
 # La funcion principal( ) en la libreria psych puede usarse para extraer y rotar los PCAs.
 # Varimax Rotated Principal Components
@@ -141,7 +140,7 @@ library(psych)
 lcrabs.rpca <- principal(lcrabs, nfactors=5, rotate="varimax")
 lcrabs.rpca    # Ver los resultados
 
-#-------------------------------------------------------------------
+#----------------------------------------------------------------------
 # Como determinar cuantos factores retener...
 # La libreria nFactors tiene funciones para determinar objetivamente 
 # cuantos factores o componentes retener. Detalles pueden 

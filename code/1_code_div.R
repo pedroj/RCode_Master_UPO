@@ -1,9 +1,9 @@
-####################################################################
+#######################################################################
 # Curso R. UPO-EBD, Nov 2013
 # Pedro Jordano.
-#-------------------------------------------------------------------
+#----------------------------------------------------------------------
 # CODIGO R usado en el curso. OTROS ANALISIS
-####################################################################
+#######################################################################
 library(MASS)
 library(datasets)
 library(ade4)
@@ -11,10 +11,16 @@ library(BiodiversityR)
 library(vegan)
 library(FD)
 
-#-------------------------------------------------------------------
+#----------------------------------------------------------------------
 # Diversidad
 library(vegan)
+# BCI: A data frame with 50 plots (rows) of 1 hectare with counts of 
+# trees on each plot with total of 225 species (columns). 
+# Full Latin names are used for tree species.
 data(BCI)
+dim(BCI)
+head(BCI)
+str(BCI)
 
 # Shannon–Weaver Simpson
 H <- diversity(BCI)  # H'= -Sum pi*log pi
@@ -23,12 +29,18 @@ H <- diversity(BCI,index = "simpson")  # D2= 1-Sum pi^2
 # Pielou’s evenness J = H′/ log(S):
 J <- H/log(specnumber(BCI))
 
+# Riqueza especifica
+## Species richness (S):
+S <- specnumber(BCI) ## rowSums(BCI > 0) hace lo mismo...
+
 # Renyi diversities de orden a:
+# Los indices de diversidad son casos especiales de la diversidad de 
+# Renyi:
 # Ha = 1/(1− a) log(Sum pi^a) ; donde a es un parametro de escala
 # Los numeros de Hill correpondientes son: 
-# Na=exp(Ha)
-#
-# Los indices de diversidad mas usados son casos especiales de 
+# Na=exp(Ha). Hill sugirio usar los numeros 0, 1, 2 e infinito para los
+# indices: S, H', inverso de Simpson y 1/max(pi), respectivamente. 
+# O sea, los indices de diversidad mas usados son casos especiales de 
 # numeros de Hill:
 # N0 = S
 # N1 = exp(H′)
@@ -42,18 +54,17 @@ J <- H/log(specnumber(BCI))
 
 # Una forma de comparar diversidades es examinar los indices de
 # Renyi para un rango de valores de a, tipicamente 0, 1, 2, 4... inf
-# Seleccionamos 9 plots para estimar su diversidad Renyi:
 data(BCI)
+
+# Seleccionamos 9 plots para estimar su diversidad Renyi:
 i <- sample(nrow(BCI), 9)
 mod <- renyi(BCI[i,])
+exp(mod[,1]) # Numero de especies en cada plot
 plot(mod)
 mod <- renyiaccum(BCI[i,])
 plot(mod, as.table=TRUE, col = c(1, 2, 2))
 
-# Alpha de Fisher (parametro alpha de la distrib. logseries)
-alpha <- fisher.alpha(BCI)
-
-#-------------------------------------------------------------------
+#----------------------------------------------------------------------
 # Rarefaccion
 # Riqueza esperada de especies en submuestras aleatorias de la 
 # comunidad con el tamaño dado. 
@@ -61,6 +72,15 @@ alpha <- fisher.alpha(BCI)
 rowSums(BCI); specnumber(BCI)    # Esta S relacionado con Nind?
 plot(rowSums(BCI),specnumber(BCI))
 Srar <- rarefy(BCI, min(rowSums(BCI)))
+
+## Rarefaction
+(raremax <- min(rowSums(BCI)))
+Srare <- rarefy(BCI, raremax)
+plot(S, Srare, xlab = "Observed No. of Species", ylab = "Rarefied No. of Species")
+abline(0, 1)
+
+# Curvas de rarefaccion para cada plot (fila del dataset). 
+rarecurve(BCI, step = 20, sample = raremax, col = "blue", cex = 0.6)
 
 # Acumulacion de especies y estimadores asintoticos
 sac <- specaccum(BCI)
@@ -87,10 +107,10 @@ specpool(BCI)
 estimateR(BCI[12, ])
 # Chao, ACE, etc son estimadores de riqueza de especies no parametricos.
 
-#-------------------------------------------------------------------
+#----------------------------------------------------------------------
 # Ver aplicaciones a otros ejemplos: genetica de poblaciones, 
 # redes,etc., en el pdf de la presentacion
-#-------------------------------------------------------------------
+#----------------------------------------------------------------------
 
 
 
