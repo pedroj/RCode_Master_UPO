@@ -17,9 +17,9 @@ library(nFactors)
 
 # Detect Outliers in the iris Data
 library(mvoutlier)
-iris<-read.table("../data/iris.txt",header=TRUE,sep="\t",dec=".",na.strings="NA")
+iris <- read.table("iris.txt", header = TRUE, sep = "\t", 
+                   dec = ".", na.strings="NA")
 # Vars: sep_len,sep_wid,pet_len,pet_wid,species
-outliers <- aq.plot(c("sep_len","sep_wid","pet_len","pet_wid"))
 outliers <- aq.plot(iris[,1:4])
 outliers # show list of outliers
 
@@ -28,7 +28,7 @@ outliers # show list of outliers
 # MANOVA y otros analisis multivariantes asumen normalidad multivariante. La funcion mshapiro.test( ) en la libreria mvnormtest da un test Shapiro-Wilk test para normalidad multivariante. La entrada al test debe ser una matriz numerica.
 
 # Test Multivariate Normality 
-mshapiro.test(as.matrix(iris[,1:4]))
+mshapiro.test(as.matrix(iris[,2:4]))
 # Da error de singularidad. Para ver otro ejemplo:
 data(EuStockMarkets)
 C <- t(EuStockMarkets[15:29,1:4])
@@ -38,11 +38,11 @@ mshapiro.test(C)
 x <- as.matrix(iris[,1:4])       # n x p matriz numerica
 center <- colMeans(x)            # centroide
 n <- nrow(x); p <- ncol(x); cov <- cov(x); 
-d <- mahalanobis(x,center,cov)   # distancias al centroide 
-qqplot(qchisq(ppoints(n),df=p),d,
-  main="QQ Plot Assessing Multivariate Normality",
-  ylab="Mahalanobis D2")
-abline(a=0,b=1)
+d <- mahalanobis(x, center, cov)   # distancias al centroide 
+qqplot(qchisq(ppoints(n), df = p), d,
+  main = "QQ Plot Assessing Multivariate Normality",
+  ylab = "Mahalanobis D2")
+abline(a = 0, b = 1)
 
 # Homogeneidad de varianzas
 # La funcion bartlett.test( ) es un test parametrico K-sample de la igualdad de varianzas. La funcion fligner.test( ) es no-parametrico. 
@@ -85,7 +85,7 @@ head(lcrabs)
 2   2.1748 2.0412 2.8959 3.0350 2.0015
 3   2.2192 2.0541 2.9444 3.1091 2.0412
 
-crabs.grp<-factor(c("B","b","O","o")[rep(1:4,each=50)])
+crabs.grp<-factor(c("B","O","b","o")[rep(1:4,each=50)])
 lcrabs.pca<-princomp(lcrabs)
 lcrabs.pca
 
@@ -127,8 +127,7 @@ fit$scores # los componentes principales
 lcrabs.pca$scores
 
 splom(~lcrabs.pca$scores[,1:3],groups=crabs.grp,panel=panel.superpose,
-	key=list(text=list(c("Blue male","Blue female","Orange male",
-	"Orange female")),
+	key=list(text=list(c("Blue male","Orange male","Blue female", "Orange female")),
 	points= Rows(trellis.par.get("superpose.symbol"),1:4),
 	columns=4))
 #----------------------------------------------------------------------

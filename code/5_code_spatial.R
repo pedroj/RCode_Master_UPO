@@ -48,7 +48,7 @@ fig4<-cbind(fig4,m) # Lo junto
 fig4.ppp <- ppp(fig4$x, fig4$y, c(0,100), c(0,100), marks=fig4$m)
 plot(fig4.ppp)
 # Plot con transparencia
-plot(fig4.ppp, bg = rgb(0, 0, 1, 0.2), pch = 16,lty=0,frame.plot=T)
+plot(fig4.ppp, bg = rgb(0, 0, 1, 0.2), pch = 16, lty=0, frame.plot=T)
 
 #---------- EJEMPLO
 # Distancia entre dos puntos
