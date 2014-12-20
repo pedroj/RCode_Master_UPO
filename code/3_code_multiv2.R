@@ -1,5 +1,5 @@
 ####################################################################
-# Curso R. UPO-EBD, Nov 2013.
+# Curso R. UPO-EBD, Nov 2014.
 # Pedro Jordano.
 #-------------------------------------------------------------------
 # CODIGO R usado en el curso. ANALISIS MULTIVARIANTE (2).
@@ -128,7 +128,8 @@ errormatrix(iris$species, y$class, relative = TRUE)
 round(100 * errormatrix(iris$species, y$class, relative = TRUE), 0)
 
 #-------------------------------------------------------------------
-# Ejemplo con library(vegan). Analisis discriminante de correspondencias.
+# Ejemplo con library(vegan). 
+# Analisis discriminante de correspondencias.
 
 data(perthi02) # perthi02 es una list con 2 componentes.
 # 

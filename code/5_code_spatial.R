@@ -1,5 +1,5 @@
 ####################################################################
-# Curso R. UPO-EBD, Nov 2012
+# Curso R. UPO-EBD, Nov 2014
 # Pedro Jordano.
 #-------------------------------------------------------------------
 # CODIGO R usado en el curso. ANALISIS ESPACIAL

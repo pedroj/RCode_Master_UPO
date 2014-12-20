@@ -1,5 +1,5 @@
 #######################################################################
-# Curso R. UPO-EBD, Nov 2013.
+# Curso R. UPO-EBD, Nov 2014.
 # Pedro Jordano.
 #----------------------------------------------------------------------
 # CODIGO R usado en el curso. ANALISIS MULTIVARIANTE.
@@ -11,18 +11,6 @@ library(mvoutlier)
 library(mvnormtest)
 library(psych)
 library(nFactors)
-#----------------------------------------------------------------------
-# Outliers multivariantes
-# La funcion aq.plot( ) en la libreria mvoutlier permite identificar outliers multivariantes por medio de distancias de Mahalanobis (plots de las "ordered squared robust Mahalanobis distances" de las observaciones a la funcion empirica.
-
-# Detect Outliers in the iris Data
-library(mvoutlier)
-iris <- read.table("iris.txt", header = TRUE, sep = "\t", 
-                   dec = ".", na.strings="NA")
-# Vars: sep_len,sep_wid,pet_len,pet_wid,species
-outliers <- aq.plot(iris[,1:4])
-outliers # show list of outliers
-
 #----------------------------------------------------------------------
 # Normalidad multivariante, etc...
 # MANOVA y otros analisis multivariantes asumen normalidad multivariante. La funcion mshapiro.test( ) en la libreria mvnormtest da un test Shapiro-Wilk test para normalidad multivariante. La entrada al test debe ser una matriz numerica.
@@ -49,7 +37,7 @@ abline(a = 0, b = 1)
 # Bartlett Test de homogeneidad de varianzas
 bartlett.test(sep_len~species, data=iris)
 
-# Figner-Killeen Test de homogeneidad de varianzas
+# Fligner-Killeen Test de homogeneidad de varianzas
 fligner.test(sep_len~species, data=iris)
 
 # La funcion plot.hov( ) en la libreria HH da un test grafico de homogeneidad de varianzas basado en Brown-Forsyth.
@@ -153,4 +141,15 @@ ap <- parallel(subject=nrow(lcrabs),var=ncol(lcrabs),
 nS <- nScree(ev$values, ap$eigen$qevpea)
 plotnScree(nS)
 
+#----------------------------------------------------------------------
+# Outliers multivariantes
+# La funcion aq.plot( ) en la libreria mvoutlier permite identificar outliers multivariantes por medio de distancias de Mahalanobis (plots de las "ordered squared robust Mahalanobis distances" de las observaciones a la funcion empirica.
+
+# Detect Outliers in the iris Data
+library(mvoutlier)
+iris <- read.table("iris.txt", header = TRUE, sep = "\t", 
+    dec = ".", na.strings="NA")
+# Vars: sep_len,sep_wid,pet_len,pet_wid,species
+outliers <- aq.plot(iris[,1:4])
+outliers # show list of outliers
 

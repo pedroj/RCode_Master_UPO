@@ -7,7 +7,6 @@
 library(MASS)
 library(datasets)
 library(ade4)
-library(BiodiversityR)
 library(vegan)
 library(FD)
 install.packages("vegan")
